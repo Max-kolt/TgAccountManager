@@ -1,0 +1,46 @@
+.login-form__wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form__content {
+  padding: 20px;
+  width: fit-content;
+  height: fit-content;
+  border: 2px solid black;
+  border-radius: 16px;
+}
+
+
+form input {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 8px;
+  height: 38px;
+  padding: 0px 10px;
+}
+
+form input[type="submit"] {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+form input[type="button"]:active {
+  background-color: gray;
+}
+
+@media screen and (max-width: 530px) {
+  .login-form__content {
+    border: unset;
+  }
+  form > div {
+    width: 80vw;
+  }
+}

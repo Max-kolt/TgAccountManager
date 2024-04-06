@@ -1,0 +1,49 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: ./app
+    ports:
+      - "8000:8000"
+
+  postgres:
+    build:
+      context: ./services/postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_USER_PASSWORD: ${DB_USER_PASSWORD}
+
+  nginx:
+    build:
+      context: ./services/nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./frontend:/site
+
+#  redis:
+#    image: redis
+#    restart: always
+#
+#  worker:
+#    build:
+#      context: .
+#    restart: always
+#    command: [ 'celery', '-A', 'app.worker:app', 'worker', '--loglevel=INFO' ]
+#    depends_on:
+#      - redis
+#
+#  flower:
+#    build: mher/flower:0.9.7
+#    restart: always
+#    command: [ 'flower', '--broker=redis://redis:6379', '--port=5555' ]
+#    ports:
+#      - "5555:5555"
+#    depends_on:
+#      - redis

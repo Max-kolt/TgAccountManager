@@ -1,0 +1,41 @@
+2024-03-11 14:14:08.710 | ERROR    | routers.users:create_user:41 - 'UserSchema' object has no attribute 'role'
+Traceback (most recent call last):
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/app/routers/users.py", line 37, in create_user
+    user = UserService.create_user(db, request_body)
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/app/services/users.py", line 30, in create_user
+    role=data.role,
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pydantic/main.py", line 767, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'UserSchema' object has no attribute 'role'
+2024-03-11 14:15:08.936 | ERROR    | routers.users:create_user:41 - 'UserSchema' object has no attribute 'role'
+Traceback (most recent call last):
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/app/routers/users.py", line 37, in create_user
+    user = UserService.create_user(db, request_body)
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/app/services/users.py", line 36, in create_user
+    role=data.role,
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pydantic/main.py", line 767, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'UserSchema' object has no attribute 'role'
+2024-03-11 14:15:35.377 | ERROR    | routers.users:create_user:41 - 400: Username already taken
+Traceback (most recent call last):
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/app/routers/users.py", line 37, in create_user
+    user = UserService.create_user(db, request_body)
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/app/services/users.py", line 24, in create_user
+    raise HTTPException(status_code=400, detail="Username already taken")
+fastapi.exceptions.HTTPException: 400: Username already taken
+2024-03-11 14:16:00.213 | ERROR    | routers.users:create_user:41 - 'UserSchema' object has no attribute 'role'
+Traceback (most recent call last):
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/app/routers/users.py", line 37, in create_user
+    user = UserService.create_user(db, request_body)
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/app/services/users.py", line 36, in create_user
+    role=data.role,
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pydantic/main.py", line 767, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'UserSchema' object has no attribute 'role'
+2024-04-06 22:09:12.946 | ERROR    | routers.users:create_user:45 - 400: Username already taken
+Traceback (most recent call last):
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/app/routers/users.py", line 41, in create_user
+    user = UserService.create_user(db, request_body)
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/app/services/users.py", line 25, in create_user
+    raise HTTPException(status_code=400, detail="Username already taken")
+fastapi.exceptions.HTTPException: 400: Username already taken

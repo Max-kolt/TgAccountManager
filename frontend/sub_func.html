@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/css/global.css" />
+    <title>Накрутка</title>
+  </head>
+  <body>
+    <header>
+      <div class="user-wrapper">
+        <div class="user-info">User: ...</div>
+        <img class="logout" src="static/img/logout.svg" alt="logout" />
+      </div>
+      <nav>
+        <div class="notifications__wrapper">
+          <img
+            class="img-btn"
+            src="static/img/notifications.svg"
+            alt="notifications"
+          />
+          <span class="notif active">4</span>
+        </div>
+        <a target="_blank" href="settings.html">
+          <img class="img-btn" src="static/img/settings.svg" alt="settings" />
+        </a>
+      </nav>
+    </header>
+    <div class="comeback">
+      <a href="index.html"> < Главная </a>
+    </div>
+    <section>
+      <h1>Накрутка</h1>
+      <form action="" method="post">
+        <div>
+          <label for="channel-link">Введите ссылку на канал</label>
+          <input type="text" name="channel-link" id="channel-link" />
+        </div>
+        <div>
+          <label for="account-length">Введите количество аккаунтов</label>
+          <input type="text" name="account-length" id="account-length" />
+        </div>
+        <div>
+          <label for="mode">Режим накрута</label>
+          <select name="mode" id="mode">
+            <option value="Fast-mode">Быстрый</option>
+            <option value="Normal-mode" selected>Обычный</option>
+            <option value="Slow-mode">Медленный</option>
+          </select>
+        </div>
+        <input type="submit" value="Накрутить" />
+      </form>
+    </section>
+  </body>
+  <script src="static/js/default_activity.js"></script>
+</html>

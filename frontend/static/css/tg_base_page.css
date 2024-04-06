@@ -1,0 +1,53 @@
+table {
+  border: 1px solid black;
+  width: fit-content;
+}
+th {
+  border-bottom: 1px solid black;
+}
+
+th,
+td {
+  padding: 5px;
+  border-left: 1px solid black;
+}
+
+th:first-child,
+td:first-child {
+  border-left: unset;
+}
+
+.popup__wrapper {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+.popup__content {
+  padding: 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(228, 228, 228);
+  border-radius: 10px;
+}
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 14px;
+  align-items: flex-start;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

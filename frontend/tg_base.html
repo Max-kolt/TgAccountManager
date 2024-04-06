@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="static/css/global.css" />
+    <link rel="stylesheet" href="static/css/tg_base_page.css" />
+
+    <title>База аккаунтов</title>
+  </head>
+  <body>
+    <header>
+      <div class="user-wrapper">
+        <div class="user-info">User: ...</div>
+        <img class="logout" src="static/img/logout.svg" alt="logout" />
+      </div>
+      <nav>
+        <div class="notifications__wrapper">
+          <img
+            class="img-btn"
+            src="static/img/notifications.svg"
+            alt="notifications"
+          />
+          <span class="notif active">4</span>
+        </div>
+        <a target="_blank" href="settings.html">
+          <img class="img-btn" src="static/img/settings.svg" alt="settings" />
+        </a>
+      </nav>
+    </header>
+    <div class="comeback">
+      <a href="index.html"> < Главная </a>
+    </div>
+    <section>
+      <input data-active="popup__wrapper" type="button" value="Добавить" />
+      <table class="users-table">
+        <tr>
+          <th>№</th>
+          <th>info</th>
+          <th>edit</th>
+        </tr>
+      </table>
+    </section>
+
+    <div class="popup__wrapper">
+      <div class="popup__content">
+        <div data-close="popup__wrapper" class="close" width="10">
+          <img src="static/img/close.svg" />
+        </div>
+        <h1>Добавить пользователя</h1>
+        <form action="" method="post">
+          <div>
+            <label for="api-hash">api-hash</label>
+            <input type="text" name="api-hash" id="api-hash" />
+          </div>
+          <div>
+            <label for="api-id">api-id</label>
+            <input type="text" name="api-id" id="api-id" />
+          </div>
+          <input type="submit" value="Зарегистрировать" />
+        </form>
+      </div>
+    </div>
+  </body>
+
+  <script src="static/js/default_activity.js"></script>
+  <script src="static/js/tg_manage.js"></script>
+</html>

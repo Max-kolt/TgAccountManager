@@ -1,0 +1,4 @@
+
+
+class TelegramService:
+    @staticmethod

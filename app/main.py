@@ -45,5 +45,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
+@app.get('/')
+async def hello():
+    return 'Welcome on our web application api'
+
+
 if __name__ == "__main__":
     uvicorn.run("main:app", reload=True)

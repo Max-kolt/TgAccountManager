@@ -32,6 +32,9 @@ services:
       - "80:80"
     volumes:
       - ./frontend:/site
+    depends_on:
+      - postgres
+      - api
 
 volumes:
   db-data:

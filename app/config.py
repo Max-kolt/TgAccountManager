@@ -10,7 +10,7 @@ DB_NAME = os.getenv('DB_NAME')
 DB_USER = os.getenv('DB_USER')
 DB_USER_PASSWORD = os.getenv('DB_USER_PASSWORD')
 DB_HOST = os.getenv('DB_HOST')
-DB_PORT = int(os.getenv('DB_PORT'))
+DB_PORT = int(os.getenv('DB_PORT')) if os.getenv('DB_PORT') is not None else None
 
 ALGORITHM = os.getenv('ALGORITHM')
 SECRET_AUTH_KEY = os.getenv('SECRET_AUTH_KEY')

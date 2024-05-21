@@ -1,7 +1,7 @@
 function loggin(user, password) {
   const data = `username=${user}&password=${password}`;
 
-  fetch("http://localhost:8000/auth/login", {
+  fetch("http://0.0.0.0/api/v2/auth/login", {
     method: "POST",
     headers: {
       accept: "application/json",
@@ -28,7 +28,7 @@ function logout() {
 function isAuth() {
   const token = localStorage.getItem("token");
   if (token) {
-    fetch("http://localhost/api/auth/check", {
+    fetch("http://0.0.0.0/api/v2/auth/check", {
       headers: {
         accept: "application/json",
         Authorization: "Bearer " + token,
@@ -40,7 +40,7 @@ function isAuth() {
 }
 
 function refreshToken(token) {
-  fetch("http://localhost/api/auth/refresh", {
+  fetch("http://0.0.0.0/api/auth/refresh", {
     headers: {
       accept: "application/json",
       Authorization: "Bearer " + token,

@@ -39,3 +39,7 @@ Traceback (most recent call last):
   File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/app/services/users.py", line 25, in create_user
     raise HTTPException(status_code=400, detail="Username already taken")
 fastapi.exceptions.HTTPException: 400: Username already taken
+2024-05-05 20:30:23.928 | INFO     | main:<module>:27 - Admin already created
+2024-05-05 20:58:33.110 | INFO     | main:<module>:27 - Admin already created
+2024-05-05 20:58:45.996 | INFO     | main:<module>:27 - Admin already created
+2024-05-05 21:05:07.201 | INFO     | main:<module>:27 - Admin already created

@@ -11,3 +11,4 @@ app/alembic/
 app/alembic.ini
 
 **.DS_Store
+app/app_logger.log

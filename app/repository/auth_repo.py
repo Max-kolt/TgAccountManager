@@ -44,12 +44,6 @@ async def verify_token(token: Annotated[str, Depends(oauth2_bearer)]):
         raise HTTPException(status_code=401, detail='Could not validate user.')
 
 
-async def refresh_token(token: Annotated[str, Depends(oauth2_bearer)]):
-    payload = await AuthRepository.decode_token(token)
-    new_token = AuthRepository.create_token({'username': payload.get('username')})
-    return new_token
-
-
 async def is_admin(current_user=Depends(verify_token), db: Session = Depends(get_db)):
     user = UserReposiroty.get_by_name(db, current_user.get("username"))
     if user.is_admin:
@@ -57,6 +51,5 @@ async def is_admin(current_user=Depends(verify_token), db: Session = Depends(get
     raise HTTPException(status_code=401, detail='User is not admin.')
 
 
-refresh_dep = Annotated[dict, Depends(refresh_token)]
 admin_dep = Annotated[dict, Depends(is_admin)]
 everyone_dep = Annotated[dict, Depends(verify_token)]

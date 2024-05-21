@@ -18,9 +18,9 @@ class BaseRepo:
 
     @classmethod
     def update(cls, db: Session, model_id: str, **kwargs):
-        query = update(cls.model)\
-            .where(cls.model.id == model_id)\
-            .values(**kwargs)\
+        query = update(cls.model) \
+            .where(cls.model.id == model_id) \
+            .values(**kwargs) \
             .execution_options(synchronize_session='fetch')
         db.execute(query)
         db.commit()
@@ -39,6 +39,4 @@ class BaseRepo:
     @classmethod
     def get_by_id(cls, db: Session, model_id: str):
         query = select(cls.model).where(cls.model.id == model_id)
-        return (db.execute(query)).scalars()
-
-
+        return (db.execute(query)).scalar_one_or_none()

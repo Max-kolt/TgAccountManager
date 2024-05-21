@@ -38,6 +38,3 @@ class ChangePrivilegesSchema(BaseModel):
     manage_tg_accounts: bool
     check_tg_msg: bool
 
-
-admin_dep = Annotated[dict, Depends(verify_token)]
-

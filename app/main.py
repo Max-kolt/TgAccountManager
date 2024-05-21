@@ -27,7 +27,7 @@ with SessionLocal() as db:
         logger.info(f'Admin already created')
 
 
-app = FastAPI(title='Manage telegram profiles')
+app = FastAPI(title='Manage telegram profiles', root_path='/api/v2')
 
 for router in all_routers:
     app.include_router(router)

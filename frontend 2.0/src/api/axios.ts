@@ -7,7 +7,7 @@ const authInterpretor = (config: any) => {
 };
 
 export const apiInstance = axios.create({
-  baseURL: `http://0.0.0.0:8080/api/v1`,
+  baseURL: `http://185.189.13.249:8080/api/v1`,
 });
 
 apiInstance.interceptors.request.use(authInterpretor);

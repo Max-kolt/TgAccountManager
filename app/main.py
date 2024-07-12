@@ -9,7 +9,7 @@ from schemas import UserSchema
 from loguru import logger
 
 logger.add('app_logger.log', rotation="500 MB", compression="gz", level="DEBUG", diagnose=False, backtrace=False)
-Base.metadata.drop_all(bind=engine)
+# Base.metadata.drop_all(bind=engine)
 Base.metadata.create_all(bind=engine)
 
 with SessionLocal() as db:

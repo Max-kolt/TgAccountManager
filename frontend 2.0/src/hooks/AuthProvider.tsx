@@ -64,6 +64,11 @@ function AuthProvider({ children }: props) {
         check_tg_msg: data["user"]["check_tg_msg"],
         created_at: data["user"]["created_at"],
       };
+
+      Object.entries<string | boolean>(data["user"]).map((value) => {
+        localStorage.setItem(value[0], `${value[1]}`);
+      });
+
       console.log(user_data);
       setUser(user_data);
 

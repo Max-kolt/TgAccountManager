@@ -36,7 +36,7 @@ async def get_user_info(user_deps: everyone_dep, user_name: str, db: Session = D
 
 
 @users_router.post('/create')
-async def create_user(request_body: UserSchema, db: Session = Depends(get_db)):
+async def create_user(user_deps: everyone_dep, request_body: UserSchema, db: Session = Depends(get_db)):
     try:
         user = UserService.create_user(db, request_body)
     except IntegrityError:

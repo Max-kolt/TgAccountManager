@@ -15,6 +15,18 @@ async def get_all(db: Session = Depends(get_db)):
     return accounts
 
 
+@tg_router.get("/get_count")
+async def get_count(db: Session = Depends(get_db)):
+    accounts = TelegramAccountsRepository.get_all(db)
+    return len(accounts)
+
+
+@tg_router.get("/get_by_login/{login}")
+async def get_count(login: str, db: Session = Depends(get_db)):
+    account = TelegramAccountsRepository.get_by_login(db, login)
+    return account
+
+
 @tg_router.post("/add_account")
 async def add_account(request_body: AddTelegramAccount, db: Session = Depends(get_db)):
     await TelegramService.add_account(db, request_body)

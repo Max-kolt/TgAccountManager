@@ -11,7 +11,7 @@ class TelegramAccounts(Base):
     phone = Column("phone", String, nullable=False, primary_key=True)
     api_id = Column("api_id", Integer, nullable=False)
     api_hash = Column("api_hash", String, nullable=False)
-    # password = Column("password", String)
+    password = Column("password", String)
     # Other info
     gender = Column("gender", String)
     is_active = Column("is_active", Boolean, default=False)

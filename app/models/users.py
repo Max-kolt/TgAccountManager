@@ -12,7 +12,7 @@ class User(Base):
     # privileges
     is_admin = Column("is_admin", Boolean, default=False)
     use_func = Column("use_func", Boolean, default=False)
-    create_roles = Column("create_roles", Boolean, default=False)
+    # create_roles = Column("create_roles", Boolean, default=False)
     create_users = Column("create_users", Boolean, default=False)
     manage_tg_accounts = Column("manage_tg_accounts", Boolean, default=False)
     check_tg_msg = Column("check_tg_msg", Boolean, default=False)

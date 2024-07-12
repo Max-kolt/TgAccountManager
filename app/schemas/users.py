@@ -10,7 +10,6 @@ class UserSchema(BaseModel):
     name: str
     is_admin: bool
     use_func: bool
-    create_roles: bool
     create_users: bool
     manage_tg_accounts: bool
     check_tg_msg: bool

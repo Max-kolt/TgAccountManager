@@ -5,7 +5,7 @@ services:
     build:
       context: ./app
     ports:
-      - "8000:8000"
+      - "8080:8080"
     depends_on:
       - postgres
     env_file:
@@ -25,16 +25,25 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
 
+  frontend:
+    build:
+      context: ./frontend 2.0
+    ports:
+      - "80:80"
+    tty: true
+
+
   nginx:
     build:
       context: ./services/nginx
-    ports:
-      - "80:80"
-    volumes:
-      - ./frontend:/site
+#    ports:
+#      - "80:80"
+#    volumes:
+#      - front:/var/www
     depends_on:
       - postgres
       - api
 
 volumes:
   db-data:
+#  front:

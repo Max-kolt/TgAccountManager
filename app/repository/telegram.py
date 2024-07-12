@@ -13,6 +13,11 @@ class TelegramAccountsRepository(BaseRepo):
         return (db.execute(query)).scalar_one_or_none()
 
     @classmethod
+    def get_last_range(cls, db: Session, count: int):
+        query = db.query(cls.model).order_by(cls.model.last_activity.desc()).limit(count)
+        return query.all()
+
+    @classmethod
     def update_by_login(cls, db: Session, login: str, **kwargs):
         query = update(cls.model) \
             .where(cls.model.login == login) \

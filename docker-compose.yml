@@ -1,49 +1,49 @@
 version: "3.9"
 
 services:
-  api:
-    build:
-      context: ./app
-    ports:
-      - "8080:8080"
-    depends_on:
-      - postgres
-    env_file:
-      - .env
+#  api:
+#    build:
+#      context: ./app
+#    ports:
+#      - "8080:8080"
+#    depends_on:
+#      - postgres
+#    env_file:
+#      - .env
 
-  postgres:
-    build:
-      context: ./services/postgres
-    ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-
-      DB_NAME: ${DB_NAME}
-      DB_USER: ${DB_USER}
-      DB_USER_PASSWORD: ${DB_USER_PASSWORD}
-    volumes:
-      - db-data:/var/lib/postgresql/data
+#  postgres:
+#    build:
+#      context: ./other_services/postgres
+#    ports:
+#      - "5432:5432"
+#    environment:
+#      POSTGRES_PASSWORD: ${DB_PASSWORD}
+#
+#      DB_NAME: ${DB_NAME}
+#      DB_USER: ${DB_USER}
+#      DB_USER_PASSWORD: ${DB_USER_PASSWORD}
+#    volumes:
+#      - db-data:/var/lib/postgresql/data
 
   frontend:
     build:
-      context: ./frontend 2.0
+      context: ./frontend
     ports:
       - "80:80"
     tty: true
 
 
-  nginx:
-    build:
-      context: ./services/nginx
-#    ports:
-#      - "80:80"
-#    volumes:
-#      - front:/var/www
-    depends_on:
-      - postgres
-      - api
-
-volumes:
-  db-data:
+#  nginx:
+#    build:
+#      context: ./services/nginx
+##    ports:
+##      - "80:80"
+##    volumes:
+##      - front:/var/www
+#    depends_on:
+#      - postgres
+#      - api
+#
+#volumes:
+#  db-data:
 #  front:

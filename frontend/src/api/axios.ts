@@ -2,7 +2,8 @@ import axios from "axios";
 import { useAuth } from "../hooks/AuthProvider";
 
 const authInterpretor = (config: any) => {
-  config.headers.Authorization = `Bearer ${localStorage.getItem("site")}`;
+  const token = localStorage.getItem("site");
+  if (token) config.headers.Authorization = `Bearer ${token}`;
   return config;
 };
 
@@ -18,7 +19,8 @@ apiInstance.interceptors.response.use(
   },
   function (error) {
     // if (!error) return Promise.reject(error);
-    if (401 === error.response.status) {
+    const response = error.response;
+    if (401 === response.status) {
       useAuth().logOut;
     } else {
       return Promise.reject(error);

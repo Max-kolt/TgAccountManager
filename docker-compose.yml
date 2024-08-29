@@ -46,7 +46,7 @@ services:
     build:
       context: ./other_services/nginx
     ports:
-      - "8080:80"
+      - "8800:80"
     depends_on:
       - users_service
 

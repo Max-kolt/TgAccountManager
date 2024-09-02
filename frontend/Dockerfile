@@ -3,10 +3,10 @@ FROM node:20.11.1-alpine
 WORKDIR /app
 
 COPY package.json .
-#RUN npm i
+#
 
 COPY . .
-
+RUN npm i
 ### EXPOSE 80
 #
-#CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "dev"]

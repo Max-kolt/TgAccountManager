@@ -27,7 +27,7 @@ async def verify_token(authorization: Annotated[str | None, Header()] = None) ->
     token = authorization.split(' ')[-1]
     payload = await decode_token(token)
 
-    if "exp" and "is_admin" and "username" not in payload:
+    if "exp" and "is_admin" and "username" and "create_users" not in payload:
         raise HTTPException(status_code=401, detail='Token damaged')
 
     if payload.get("exp") <= int(datetime.now().timestamp()):
@@ -36,4 +36,18 @@ async def verify_token(authorization: Annotated[str | None, Header()] = None) ->
     return payload
 
 
+async def verify_admin(current_user: dict = Depends(verify_token)):
+    if current_user.get("is_admin"):
+        return current_user
+    raise HTTPException(status_code=401, detail='User is not admin.')
+
+
+async def verify_create_users(current_user: dict = Depends(verify_token)):
+    if current_user.get("create_users"):
+        return current_user
+    raise HTTPException(status_code=401, detail="User can't create users")
+
+
+create_user_dep = Annotated[dict, Depends(verify_create_users)]
+admin_dep = Annotated[dict, Depends(verify_admin)]
 everyone_dep = Annotated[dict, Depends(verify_token)]

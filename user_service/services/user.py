@@ -13,14 +13,11 @@ class UserSchema(BaseModel):
     create_users: bool
     manage_tg_accounts: bool
     check_tg_msg: bool
+    password: str | None
 
 
 class LoginSchema(BaseModel):
     name: str
-    password: str
-
-
-class UserSettingSchema(UserSchema):
     password: str
 
 
@@ -44,25 +41,26 @@ class UserService:
         if verify:
             raise HTTPException(status_code=400, detail="Username already taken")
 
-        _random_password = generate_password(lenght=16)
+        if not data.password:
+            data.password = generate_password(lenght=16)
 
-        model = UserSettingSchema(
-            **data.model_dump(),
-            password=hashing_password(_random_password)
+        dump = data.model_dump()
+        dump.pop('password')
+
+        model = UserSchema(
+            **dump,
+            password=hashing_password(data.password)
         )
         await UserRepo.create(db, **model.model_dump())
 
-        return UserSettingSchema(
-            **data.model_dump(),
-            password=_random_password
-        )
+        return data
 
     @staticmethod
     async def login(db: AsyncSession, auth: LoginSchema) -> tuple[str, dict]:
         user = await UserRepo.get_by_name(db, auth.name)
         if user:
-            if not user.is_active:
-                raise HTTPException(status_code=400, detail='Account blocked')
+            # if not user.is_active:
+            #     raise HTTPException(status_code=400, detail='Account blocked')
             if verify_password(auth.password, user.password):
                 jwt_token = create_token(data={
                     'username': user.name,

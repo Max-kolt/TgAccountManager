@@ -3,10 +3,15 @@ import EyeIcon from "/eye.svg";
 
 type PasswordInputProps = {
   onChange: (v: string) => void;
+  value?: string;
   required?: boolean;
 };
 
-export function PasswordInput({ onChange, required }: PasswordInputProps) {
+export function PasswordInput({
+  onChange,
+  required,
+  value,
+}: PasswordInputProps) {
   const [view, setView] = useState(false);
 
   return (
@@ -22,6 +27,7 @@ export function PasswordInput({ onChange, required }: PasswordInputProps) {
           name="password"
           id="password"
           autoComplete="off"
+          value={value}
           required={required}
         />
         <img

@@ -9,6 +9,7 @@ import { UserListSection } from "./contains/usersListSection";
 export function SettingsData() {
   const [createMode, setCreateMode] = useState(false);
   const user = useAuth();
+  console.log(user.user?.create_users);
 
   return (
     <div className="w-full  flex flex-col gap-3">

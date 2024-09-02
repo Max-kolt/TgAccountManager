@@ -1,14 +1,14 @@
 from fastapi import APIRouter, Depends
 from database import get_async_session
 from sqlalchemy.ext.asyncio import AsyncSession
-from repository import everyone_dep, UserRepo
-from services import UserService, UserSchema, UserSettingSchema, ChangePasswordSchema, ChangePrivilegesSchema
+from repository import everyone_dep, UserRepo, admin_dep, create_user_dep
+from services import UserService, UserSchema, ChangePasswordSchema, ChangePrivilegesSchema
 
 users_router = APIRouter(prefix='/users', tags=['Users'])
 
 
 @users_router.get('/get_all')
-async def get_users(user_dep: everyone_dep, db: AsyncSession = Depends(get_async_session)):
+async def get_users(user_dep: admin_dep, db: AsyncSession = Depends(get_async_session)):
     all_users = await UserService.get_all(db, skip_user=user_dep['username'])
     return all_users
 
@@ -20,13 +20,13 @@ async def get_user_info(user_deps: everyone_dep, db: AsyncSession = Depends(get_
 
 
 @users_router.post('/create')
-async def create_user(user_deps: everyone_dep, request_body: UserSchema, db: AsyncSession = Depends(get_async_session)):
+async def create_user(user_deps: create_user_dep, request_body: UserSchema, db: AsyncSession = Depends(get_async_session)):
     result_user = await UserService.create_user(db, request_body)
     return result_user
 
 
 @users_router.delete("/delete/{user_name}")
-async def delete_user(user_deps: everyone_dep, user_name: str, db: AsyncSession = Depends(get_async_session)):
+async def delete_user(user_deps: admin_dep, user_name: str, db: AsyncSession = Depends(get_async_session)):
     await UserRepo.delete(db, user_name)
     return {'ok': True}
 

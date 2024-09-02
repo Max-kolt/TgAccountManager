@@ -10,7 +10,8 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(lifespan=lifespan)
+app = FastAPI(lifespan=lifespan, title='Users service')
+
 
 app.include_router(v1_router)
 app.add_middleware(

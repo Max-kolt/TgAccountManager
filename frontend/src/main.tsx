@@ -13,21 +13,19 @@ import { SettingsPage } from "./pages/site_settings";
 import { AccountPage } from "./pages/account";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <AuthProvider>
-        <Routes>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="*" element={<ErrorPage />} />
-          <Route element={<PrivateRoute />}>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/base" element={<AccountsBasePage />} />
-            <Route path="/sub_func" element={<SubscriptionFunctionPage />} />
-            <Route path="/settings" element={<SettingsPage />} />
-            <Route path="/account/:login" element={<AccountPage />} />
-          </Route>
-        </Routes>
-      </AuthProvider>
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter>
+    <AuthProvider>
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="*" element={<ErrorPage />} />
+        <Route element={<PrivateRoute />}>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/base" element={<AccountsBasePage />} />
+          <Route path="/sub_func" element={<SubscriptionFunctionPage />} />
+          <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/account/:login" element={<AccountPage />} />
+        </Route>
+      </Routes>
+    </AuthProvider>
+  </BrowserRouter>
 );

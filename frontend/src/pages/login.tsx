@@ -13,8 +13,10 @@ export function LoginPage() {
 
   const submitAuthHandler = () => {
     if (login !== "" && password !== "") {
-      if (!auth.logIn({ login, password })) {
-        console.log("not good");
+      const is_login = auth.logIn({ login, password });
+      console.log(is_login);
+      if (!is_login) {
+
         alert("Name or password invalid");
         return;
       }
@@ -32,7 +34,7 @@ export function LoginPage() {
       <div className="border-2 rounded-xl border-neutral-950 p-5 px-10">
         <form className="flex flex-col gap-5 items-center">
           <DefaultInput onChange={(v) => setLogin(v)} label="Имя" required />
-          <PasswordInput onChange={(v) => setPassword(v)} required />
+          <PasswordInput onChange={(v) => setPassword(v)}  required />
           <DefaultButton
             callbackHandler={() => submitAuthHandler()}
             text="Войти"

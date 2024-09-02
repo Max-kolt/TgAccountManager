@@ -31,11 +31,9 @@ export function Navbar() {
           <Link className="underline text-blue-950" to="/">
             Главная
           </Link>
-          {(auth.user?.is_admin || auth.user?.create_users) && (
-            <Link className="underline text-blue-950" to="/settings">
-              Настройки сайта
-            </Link>
-          )}
+          <Link className="underline text-blue-950" to="/settings">
+            Настройки сайта
+          </Link>
           {/* <DefaultButton
             img={NotificationIcon}
             custom="p-2"

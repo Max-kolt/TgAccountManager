@@ -32,3 +32,14 @@ type AccountOnlineInfo = {
   online_delay: number;
   time_utc: number;
 };
+
+type UserInfo = {
+  check_tg_msg: boolean;
+  create_users: boolean;
+  created_at: string;
+  is_active: boolean;
+  is_admin: boolean;
+  manage_tg_accounts: boolean;
+  name: string;
+  use_func: boolean;
+};

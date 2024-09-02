@@ -11,12 +11,14 @@ type CurrentInputProps = {
 
 type MultiUpdateInputProps = {
   callbackHandler: () => void;
+  manipulatingActive?: boolean;
   inputs: CurrentInputProps[];
 };
 
 export function MultiUpdateInput({
   callbackHandler,
   inputs,
+  manipulatingActive,
 }: MultiUpdateInputProps) {
   const [isActive, setActive] = useState(false);
 

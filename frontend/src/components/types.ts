@@ -1,4 +1,5 @@
 type AccountTableInfo = {
+  id: number
   login: string;
   phone: string;
   last_activity?: string;
@@ -6,6 +7,7 @@ type AccountTableInfo = {
 };
 
 type AccountInfo = {
+  id: number
   login: string;
   phone: string;
 };

@@ -14,7 +14,7 @@ export function ChooseInput({
   return (
     <div>
       <label htmlFor={label}>{label}</label>
-      <div className="flex border border-gray-600">
+      <div className="flex border border-gray-600 w-fit">
         {options.map((option, i) => {
           return (
             <div

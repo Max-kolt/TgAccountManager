@@ -47,7 +47,7 @@ export function AccountView({
       <h2>@{accountInfo?.login}</h2>
       <p>Телефон: {accountInfo?.phone}</p>
       <br />
-      <div className="w-2/3 flex gap-4">
+      <div className="w-2/3 flex gap-4 max-md:flex-col">
         <UpdateField
           value={fname}
           onChange={(v) => setFname(v)}

@@ -3,12 +3,13 @@ import { useAuth } from "../hooks/AuthProvider";
 
 const authInterpretor = (config: any) => {
   const token = localStorage.getItem("site");
-  if (token) config.headers.Authorization = `Bearer ${token}`;
+  if (token) config.headers.AccessToken = `Bearer ${token}`;
   return config;
 };
 
 export const apiUserInstance = axios.create({
-  baseURL: `http://185.189.13.249:8043/v1`,
+  // baseURL: `http://185.189.13.249:8043/api/v1`,
+  baseURL: `http://0.0.0.0:8081/api/v1`,
 });
 
 apiUserInstance.interceptors.request.use(authInterpretor);
@@ -28,7 +29,8 @@ apiUserInstance.interceptors.response.use(
 );
 
 export const apiTelegramInstance = axios.create({
-  baseURL: `http://185.189.13.249:8052/v1`,
+  // baseURL: `http://185.189.13.249:8052/api/v1`,
+  baseURL: `http://0.0.0.0:8080/api/v1`
 });
 apiUserInstance.interceptors.request.use(authInterpretor);
 apiUserInstance.interceptors.response.use(

@@ -10,7 +10,7 @@ services:
 
   telegram_service:
     build:
-      context: ./docker/telegram_service
+      context: ./telegram_service/docker/telegram_service
     ports:
       - "8052:8000"
 
@@ -19,7 +19,7 @@ services:
 
   background_tasks:
     build:
-      context: ./docker/background_tasks
+      context: ./telegram_service/docker/background_tasks
     env_file:
       - .env
 

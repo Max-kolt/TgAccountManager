@@ -1,58 +1,38 @@
 version: "3.9"
 
 services:
-  redis:
-    image: bitnami/redis:7.4.0
-    ports:
-      - "6379:6379"
-    healthcheck:
-      test: [ "CMD", "redis-cli", "ping" ]
-      interval: 10s
-      timeout: 5s
-      retries: 3
-    environment:
-      REDIS_PASSWORD: ${REDIS_PASSWORD}
-    command:
-      - 'redis-server'
-      - '--loglevel ${REDIS_LOGLEVEL:-warning}'
-      - '--databases 2'
-      - '--save 900 1'
-      - '--save 300 10'
-      - '--save 60 10000'
-      - '--maxmemory ${REDIS_MAXMEM:-50mb}'
-      - '--maxmemory-policy ${REDIS_POLICY:-noeviction}'
-    volumes:
-      - redis:/data
-
-  mongodb:
-    image: mongo:4.0
-    restart: always
-    ports:
-      - "27017:27017"
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
-      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
-    volumes:
-      - mongo:/data/db
-
   users_service:
     build:
       context: ./user_service
-    restart: always
+
     ports:
       - "8043:8080"
     env_file:
       - .env
 
-#  telegram_service:
-#    build:
-#      context: ./telegram_service
-#    restart: unless-stopped
-#    ports:
-#      - "8052:8080"
-#    env_file:
-#      - .env
+  telegram_service:
+    build:
+      context: ./docker/telegram_service
+    ports:
+      - "8052:8000"
 
+    env_file:
+      - .env
+
+  background_tasks:
+    build:
+      context: ./docker/background_tasks
+    env_file:
+      - .env
+
+  #  telegram_service:
+  #    build:
+  #      context: ./telegram_service
+  #    restart: unless-stopped
+  #    ports:
+  #      - "8052:8080"
+  #    env_file:
+  #      - .env
 
   frontend:
     build:
@@ -60,17 +40,3 @@ services:
     ports:
       - "80:80"
     tty: true
-
-
-#  nginx:
-#    build:
-#      context: ./other_services/nginx
-#    ports:
-#      - "8800:80"
-#    depends_on:
-#      - users_service
-
-#
-volumes:
-  redis:
-  mongo:

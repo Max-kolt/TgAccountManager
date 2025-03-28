@@ -12,7 +12,7 @@ services:
     build:
       context: ./telegram-service/docker/telegram_service
     ports:
-      - "8052:8000"
+      - "8052:8080"
     volumes: -./telegram-service:/app
 
     env_file:

@@ -17,7 +17,7 @@ async def set_admin():
                 f'INSERT INTO users_data.users (name, password, is_admin, use_func, create_users, manage_tg_accounts, '
                 f'check_tg_msg, is_active) VALUES'
                 f'  (:username, :password , true, true, true, true, true, true);'
-            ), {'username': "DimaSmile", 'password': hashing_password(password)})
+            ), {'username': username, 'password': hashing_password(password)})
 
             await session.commit()
         except IntegrityError:

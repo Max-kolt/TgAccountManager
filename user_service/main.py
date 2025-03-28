@@ -10,7 +10,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(lifespan=lifespan, title='Users service')
+app = FastAPI(lifespan=lifespan, title='Users service', root_path='/api')
 
 
 app.include_router(v1_router)

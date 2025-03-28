@@ -36,7 +36,7 @@ class TelegramService:
         try:
             new_account = Client(
                 api_id=data.api_id, api_hash=data.api_hash, password=data.password, workdir=SESSIONS_DIR,
-                session_name=PostgreSQLStorage(db_pool=session_db, user_id=data.user_id , phone=data.phone)
+                session_name=PostgreSQLStorage(db_pool=session_db, user_id=data.user_id, phone=data.phone)
             )
             await new_account.connect()
         except Exception as e:

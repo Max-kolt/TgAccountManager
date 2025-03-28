@@ -12,3 +12,7 @@ app/alembic.ini
 
 **.DS_Store
 app/app_logger.log
+
+
+*.session
+frontend (depricated)

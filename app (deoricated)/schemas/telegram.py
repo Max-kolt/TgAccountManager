@@ -3,7 +3,6 @@ from pydantic import BaseModel
 
 class AuthTelegramAccount(BaseModel):
     login: str
-    user_id: int
     phone: str
     password: str | None
 

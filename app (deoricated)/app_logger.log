@@ -1,0 +1,168 @@
+2024-07-12 09:24:09.195 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 09:30:07.225 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 10:34:59.581 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 10:35:13.663 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 10:40:14.953 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 10:41:16.886 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 10:41:43.768 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 10:43:16.904 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 10:43:27.007 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 10:48:19.220 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 10:49:15.304 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 10:52:22.014 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 10:55:57.809 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 10:56:28.385 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 10:56:52.605 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 10:57:09.895 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 11:00:11.190 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 11:00:49.536 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 11:01:01.981 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 11:02:11.903 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 11:04:45.988 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 11:05:12.023 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 11:05:18.617 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 11:31:42.723 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 11:32:24.274 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 11:37:24.824 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 11:41:03.890 | INFO     | services.telegram_actions:subscription:24 - Start subscription process on https://t.me/slowmenext with 1 accounts
+2024-07-12 11:42:58.493 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 11:43:09.392 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 11:43:09.519 | INFO     | services.telegram_actions:subscription:24 - Start subscription process on https://t.me/slowmenext with 1 accounts
+2024-07-12 11:44:39.609 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 11:44:39.762 | INFO     | services.telegram_actions:subscription:24 - Start subscription process on https://t.me/slowmenext with 1 accounts
+2024-07-12 11:46:43.189 | INFO     | services.telegram_actions:subscription:24 - Start subscription process on slowmenext with 1 accounts
+2024-07-12 11:46:44.446 | INFO     | services.telegram_actions:subscription:30 - Finish subscription process on slowmenext with 1 accounts
+2024-07-12 11:47:17.855 | INFO     | services.telegram_actions:subscription:24 - Start subscription process on slowmenext with 1 accounts
+2024-07-12 11:47:18.661 | INFO     | services.telegram_actions:subscription:30 - Finish subscription process on slowmenext with 1 accounts
+2024-07-12 11:48:01.455 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 11:48:45.768 | INFO     | services.telegram_actions:subscription:24 - Start subscription process on https://t.me/slowmenext with 1 accounts
+2024-07-12 11:48:46.832 | INFO     | services.telegram_actions:subscription:30 - Finish subscription process on https://t.me/slowmenext with 1 accounts
+2024-07-12 11:49:36.026 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 11:50:07.888 | INFO     | main:<module>:27 - Admin already created
+2024-07-12 12:23:58.340 | INFO     | services.telegram_actions:subscription:24 - Start subscription process on https://t.me/slowmenext with 0 accounts
+2024-07-12 12:23:58.344 | INFO     | services.telegram_actions:subscription:29 - Finish subscription process on https://t.me/slowmenext with 0 accounts
+2024-07-12 12:24:23.773 | INFO     | services.telegram_actions:subscription:24 - Start subscription process on https://t.me/slowmenext with 1 accounts
+2024-07-12 12:24:26.687 | INFO     | services.telegram_actions:subscription:29 - Finish subscription process on https://t.me/slowmenext with 1 accounts
+2024-08-16 01:25:47.792 | INFO     | services.telegram_actions:subscription:24 - Start subscription process on https://t.me/slowmenext with 1 accounts
+2024-08-16 02:35:33.158 | INFO     | services.telegram_actions:subscription:24 - Start subscription process on https://t.me/slowmenext with 1 accounts
+2024-08-16 02:35:36.038 | INFO     | services.telegram_actions:subscription:30 - Finish subscription process on https://t.me/slowmenext with 1 accounts
+2024-08-16 23:02:38.452 | ERROR    | services.telegram:get_account_info:84 - database is locked
+Traceback (most recent call last):
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/app/services/telegram.py", line 82, in get_account_info
+    tg_client: Client = await Client(login).start()
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram/methods/utilities/start.py", line 58, in start
+    is_authorized = await self.connect()
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram/methods/auth/connect.py", line 40, in connect
+    await self.load_session()
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram/client.py", line 616, in load_session
+    await self.storage.open()
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram/storage/file_storage.py", line 63, in open
+    self.update()
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram/storage/file_storage.py", line 52, in update
+    self.version(version)
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram/storage/sqlite_storage.py", line 219, in version
+    self.conn.execute(
+sqlite3.OperationalError: database is locked
+2024-08-16 23:33:19.397 | ERROR    | services.telegram:get_account_info:84 - database is locked
+Traceback (most recent call last):
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/app/services/telegram.py", line 82, in get_account_info
+    tg_client: Client = await Client(login).start()
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram/methods/utilities/start.py", line 58, in start
+    is_authorized = await self.connect()
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram/methods/auth/connect.py", line 40, in connect
+    await self.load_session()
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram/client.py", line 616, in load_session
+    await self.storage.open()
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram/storage/file_storage.py", line 63, in open
+    self.update()
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram/storage/file_storage.py", line 52, in update
+    self.version(version)
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram/storage/sqlite_storage.py", line 219, in version
+    self.conn.execute(
+sqlite3.OperationalError: database is locked
+2024-08-17 17:19:53.018 | INFO     | main:<module>:31 - Admin already created
+2024-08-19 21:49:32.957 | INFO     | main:<module>:31 - Admin already created
+2024-08-19 21:49:37.396 | INFO     | main:<module>:31 - Admin already created
+2024-08-19 21:49:46.553 | ERROR    | services.telegram:add_account:42 - object of type 'PostgreSQLStorage' has no len()
+Traceback (most recent call last):
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/app/services/telegram.py", line 40, in add_account
+    await new_account.connect()
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram/methods/auth/connect.py", line 40, in connect
+    await self.load_session()
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram/client.py", line 616, in load_session
+    await self.storage.open()
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram/storage/memory_storage.py", line 41, in open
+    if len(self.session_string) in [self.SESSION_STRING_SIZE, self.SESSION_STRING_SIZE_64]:
+TypeError: object of type 'PostgreSQLStorage' has no len()
+2024-08-19 21:51:38.960 | INFO     | main:<module>:31 - Admin already created
+2024-08-19 21:51:45.488 | ERROR    | services.telegram:add_account:42 - unsupported operand type(s) for +: 'PostgreSQLStorage' and 'str'
+Traceback (most recent call last):
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/app/services/telegram.py", line 36, in add_account
+    new_account = Client(
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram/client.py", line 265, in __init__
+    self.storage = FileStorage(self.name, self.workdir)
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram/storage/file_storage.py", line 35, in __init__
+    self.database = workdir / (self.name + self.FILE_EXTENSION)
+TypeError: unsupported operand type(s) for +: 'PostgreSQLStorage' and 'str'
+2024-08-19 22:37:48.149 | INFO     | main:<module>:31 - Admin already created
+2024-08-19 22:56:26.484 | ERROR    | services.telegram:add_account:42 - Client.__init__() got an unexpected keyword argument 'name'
+Traceback (most recent call last):
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/app/services/telegram.py", line 36, in add_account
+    new_account = Client(
+TypeError: Client.__init__() got an unexpected keyword argument 'name'
+2024-08-19 22:56:42.381 | INFO     | main:<module>:31 - Admin already created
+2024-08-19 22:56:42.901 | ERROR    | services.telegram:add_account:42 - '_ContextManager' object has no attribute 'acquire'
+Traceback (most recent call last):
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/app/services/telegram.py", line 40, in add_account
+    await new_account.connect()
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram/methods/auth/connect.py", line 39, in connect
+    await self.load_session()
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram/client.py", line 677, in load_session
+    await self.storage.open()
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram_aiopg_storage/__init__.py", line 132, in open
+    async with self._pool.acquire() as conn:
+AttributeError: '_ContextManager' object has no attribute 'acquire'
+2024-08-20 20:39:14.406 | INFO     | main:<module>:31 - Admin already created
+2024-08-20 20:42:47.139 | ERROR    | services.telegram:add_account:42 - '_ContextManager' object has no attribute 'acquire'
+Traceback (most recent call last):
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/app/services/telegram.py", line 40, in add_account
+    await new_account.connect()
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram/methods/auth/connect.py", line 39, in connect
+    await self.load_session()
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram/client.py", line 677, in load_session
+    await self.storage.open()
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram_aiopg_storage/__init__.py", line 132, in open
+    async with self._pool.acquire() as conn:
+AttributeError: '_ContextManager' object has no attribute 'acquire'
+2024-08-20 20:54:17.207 | INFO     | main:<module>:31 - Admin already created
+2024-08-20 21:01:12.218 | INFO     | main:<module>:31 - Admin already created
+2024-08-20 21:01:23.131 | ERROR    | services.telegram:add_account:42 - '_asyncio.Task' object has no attribute 'acquire'
+Traceback (most recent call last):
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/app/services/telegram.py", line 40, in add_account
+    await new_account.connect()
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram/methods/auth/connect.py", line 39, in connect
+    await self.load_session()
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram/client.py", line 677, in load_session
+    await self.storage.open()
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/lib/python3.11/site-packages/pyrogram_aiopg_storage/__init__.py", line 132, in open
+    async with self._pool.acquire() as conn:
+AttributeError: '_asyncio.Task' object has no attribute 'acquire'
+2024-08-20 21:02:38.958 | INFO     | main:<module>:31 - Admin already created
+2024-08-21 01:17:02.371 | INFO     | main:<module>:31 - Admin already created
+2024-08-21 01:19:07.216 | INFO     | main:<module>:31 - Admin already created
+2024-08-21 01:20:04.753 | INFO     | main:<module>:31 - Admin already created
+2024-08-22 00:59:19.575 | INFO     | main:<module>:34 - Admin already created
+2024-08-22 00:59:38.373 | ERROR    | services.telegram:add_account:43 - [16] The msg_id is too low, the client time has to be synchronized.
+Traceback (most recent call last):
+  File "/Users/maxkolt/Desktop/Work/Freelance/TelegramSubscriptionService/app/services/telegram.py", line 41, in add_account
+    await new_account.connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyrogram/methods/auth/connect.py", line 46, in connect
+    await self.session.start()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyrogram/session/session.py", line 159, in start
+    raise e
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyrogram/session/session.py", line 117, in start
+    (await self._send(
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyrogram/session/session.py", line 383, in _send
+    raise BadMsgNotification(result.error_code)
+pyrogram.errors.BadMsgNotification: [16] The msg_id is too low, the client time has to be synchronized.
+2024-08-22 16:14:37.404 | INFO     | main:<module>:34 - Admin already created

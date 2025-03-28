@@ -2,12 +2,13 @@ from typing import Generic, TypeVar
 from sqlalchemy import update, delete
 from sqlalchemy.future import select
 from sqlalchemy.orm import Session
+from models.b
 
 T = TypeVar('T')
 
 
 class BaseRepo:
-    model = Generic[T]
+    model: = Generic[T]
 
     @classmethod
     def create(cls, db: Session, **kwargs):

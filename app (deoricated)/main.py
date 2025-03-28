@@ -1,13 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-import uvicorn
-from routers import v1_router, all_routers
+from routers import v1_router
 from loguru import logger
 from models import Base
 from database import engine, SessionLocal
 from schemas import UserSchema
 from services import UserService
-import pydantic
 
 
 logger.add('app_logger.log', rotation="500 MB", compression="gz", level="DEBUG", diagnose=False, backtrace=False)
@@ -54,6 +52,3 @@ app.add_middleware(
 async def hello():
     return 'Welcome on our web application api'
 
-
-if __name__ == "__main__":
-    uvicorn.run("main:app", reload=True)

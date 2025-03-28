@@ -14,7 +14,7 @@ async def set_admin():
 
         try:
             result = await session.execute(text(
-                f'INSERT INTO users_data.users (name, password, is_admin, use_func, create_users, manage_tg_accounts, '
+                f'INSERT INTO users (name, password, is_admin, use_func, create_users, manage_tg_accounts, '
                 f'check_tg_msg, is_active) VALUES'
                 f'  (:username, :password , true, true, true, true, true, true);'
             ), {'username': username, 'password': hashing_password(password)})

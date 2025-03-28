@@ -10,7 +10,7 @@ services:
 
   telegram_service:
     build:
-      context: ./telegram_service/docker/telegram_service
+      context: ./telegram-service/docker/telegram_service
     ports:
       - "8052:8000"
 

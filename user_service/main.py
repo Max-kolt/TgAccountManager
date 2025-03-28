@@ -5,8 +5,8 @@ from utils import setting_database, set_admin
 
 
 async def lifespan(app: FastAPI):
-    await setting_database()
-    await set_admin()
+    # await setting_database()
+    # await set_admin()
     yield
 
 

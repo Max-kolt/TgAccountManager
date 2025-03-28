@@ -6,7 +6,7 @@ Base = declarative_base()
 
 class BaseModel(Base):
     __abstract__ = True
-    __table_args__ = {'schema': 'users_data'}
+    # __table_args__ = {'schema': 'users_data'}
 
     @declared_attr.directive
     def __tablename__(cls) -> str:

@@ -19,7 +19,7 @@ services:
 
   background_tasks:
     build:
-      context: ./telegram_service/docker/background_tasks
+      context: ./telegram-service/docker/background_tasks
     env_file:
       - .env
 

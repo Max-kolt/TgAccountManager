@@ -24,6 +24,7 @@ export function AddAccountPopup({ clickHandler }: AddAccountProps) {
   const addAccountAction = () => {
     if (apiId && apiHash && login && phone) {
       const data = {
+        user_id: userId,
         login: login,
         phone: phone,
         api_id: parseInt(apiId),
@@ -47,13 +48,8 @@ export function AddAccountPopup({ clickHandler }: AddAccountProps) {
       let data;
       try {
         data = {
-          login: login,
-          phone: phone,
           user_id: parseInt(userId),
-          api_id: parseInt(apiId),
-          api_hash: apiHash,
-          password: password,
-          confirmation_code: coonfirmationCode,
+          confirm_code: coonfirmationCode,
         };
       } catch {
         alert("Неверный формат ввода");

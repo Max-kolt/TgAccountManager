@@ -25,11 +25,11 @@ export function AddAccountPopup({ clickHandler }: AddAccountProps) {
     if (apiId && apiHash && login && phone) {
       const data = {
         user_id: userId,
-        login: login,
+        login: login.length > 0 ? login : null,
         phone: phone,
         api_id: parseInt(apiId),
         api_hash: apiHash,
-        password: password,
+        password: password.length > 0 ? password : null,
       };
       setState("loading");
       add_account(data)

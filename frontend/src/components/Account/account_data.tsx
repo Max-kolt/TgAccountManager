@@ -60,7 +60,7 @@ export function AccountData({ login }: AccountDataProps) {
             genderState={genderState}
           />
           <AccountOnlineSettings login={login} />
-          <ChatsView login={login} />
+          {/* <ChatsView login={login} /> */}
         </div>
       ) : (
         <div className="flex items-center justify-center w-full h-full">

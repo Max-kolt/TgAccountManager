@@ -34,7 +34,7 @@ export function AddAccountPopup({ clickHandler }: AddAccountProps) {
       setState("loading");
       add_account(data)
         .then((response) => {
-          if (response.data["ok"]) setState("confirm");
+          setState("confirm");
         })
         .catch(function (error) {
           setState("add");

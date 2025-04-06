@@ -9,7 +9,7 @@ import { ChatsView } from "./contains/chats_view";
 type AccountDataProps = { login: string };
 
 export function AccountData({ login }: AccountDataProps) {
-  const accountState = useState<AccountInfo>({ login: "", phone: "" });
+  const accountState = useState<AccountInfo>({ id: 0, login: "", phone: "" });
   const fnameState = useState("");
   const lnameState = useState("");
   const genderState = useState<"М" | "Д" | "">("");
@@ -18,23 +18,25 @@ export function AccountData({ login }: AccountDataProps) {
 
   useEffect(() => {
     console.log("send req");
-    // get_tg_account(login)
-    //   .then((value) => {
-    //     const account = value.data;
+    get_tg_account(login)
+      .then((value) => {
+        const account = value.data;
 
-    //     accountState[1]({
-    //       login: account["login"],
-    //       phone: account["phone"],
-    //     });
-    //     descriptionState[1](account["description"]);
-    //     fnameState[1](account["fname"]);
-    //     lnameState[1](account["lname"]);
-    //   })
-    //   .catch((error) => {
-    //     alert(error.response.data.detail);
+        accountState[1]({
+          id: account["id"],
+          login: account["login"],
+          phone: account["phone"],
+        });
+        descriptionState[1](account["description"]);
+        fnameState[1](account["fname"]);
+        lnameState[1](account["lname"]);
+      })
+      .catch((error) => {
+        alert(error.response.data.detail);
 
-    //   });
+      });
     accountState[1]({
+      id: 
       login: login,
       phone: "phone",
     });

@@ -35,11 +35,11 @@ export function AccountData({ login }: AccountDataProps) {
         alert(error.response.data.detail);
 
       });
-    accountState[1]({
-      id: 
-      login: login,
-      phone: "phone",
-    });
+    // accountState[1]({
+    //   id: 
+    //   login: login,
+    //   phone: "phone",
+    // });
     genderState[1]("");
     descriptionState[1]("description");
     fnameState[1]("fname");

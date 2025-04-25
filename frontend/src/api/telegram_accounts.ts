@@ -3,22 +3,31 @@ import { apiTelegramInstance } from "./axios";
 
 // Get requests
 export const get_tg_accounts = (): Promise<AxiosResponse> => {
-  return apiTelegramInstance.get<AxiosResponse>("/telegram/accounts/get_all");
+  return apiTelegramInstance.get<AxiosResponse>("/telegram/accounts/");
 };
 
 export const get_tg_account = (login: string): Promise<AxiosResponse> => {
+  return apiTelegramInstance.get<AxiosResponse>(`/telegram/accounts/${login}`);
+};
+
+export const get_tg_face_account = (login: string): Promise<AxiosResponse> => {
   return apiTelegramInstance.get<AxiosResponse>(
-    `/telegram/accounts/get_by_login/${login}`
+    `/telegram/accounts/${login}/face_info`
   );
 };
 
+export const get_online_account = (login: string): Promise<AxiosResponse> => {
+  return apiTelegramInstance.get<AxiosResponse>(
+    `/telegram/accounts/${login}/online_info`
+  );
+};
 export const get_tg_accounts_count = (): Promise<AxiosResponse> => {
   return apiTelegramInstance.get<AxiosResponse>("/telegram/accounts/get_count");
 };
 
 export const get_tg_account_chats = (login: string): Promise<AxiosResponse> => {
   return apiTelegramInstance.get<AxiosResponse>(
-    `/telegram/accounts/get_chats/${login}`
+    `/telegram/accounts/${login}/chats`
   );
 };
 
